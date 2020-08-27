@@ -40,7 +40,7 @@ public class Vault {
         MyVector<Book> authorArr = new MyVector<>();
         for (int i = 0; i < library.size(); i++) {
 
-            if (library.get(i).getAythor(author)) {
+            if (library.get(i).trueAuthor(author)) {
                 authorArr.addValue(library.get(i));
             }
         }
@@ -57,7 +57,7 @@ public class Vault {
         System.out.println();
         MyVector<Book> genreArr = new MyVector<>();
         for (int i = 0; i < library.size(); i++) {
-            if (library.get(i).getGenre(genre)) {
+            if (library.get(i).trueGenre(genre)) {
                 genreArr.addValue(library.get(i));
             }
         }
@@ -73,7 +73,7 @@ public class Vault {
         System.out.println();
         MyVector<Book> authorGenreArr = new MyVector<>();
         for (int i = 0; i < library.size(); i++) {
-            if (library.get(i).getAythor(author) & library.get(i).getGenre(genre)) {
+            if (library.get(i).trueAuthor(author) & library.get(i).trueGenre(genre)) {
                 authorGenreArr.addValue(library.get(i));
             }
         }
@@ -89,7 +89,7 @@ public class Vault {
         System.out.println();
         MyVector<Book> periodArr = new MyVector<>();
         for (int i = 0; i < library.size(); i++) {
-            if (library.get(i).getEdition(start, end)){
+            if (library.get(i).isPublisheInPeriod(start, end)){
                 periodArr.addValue(library.get(i));
             }
         }

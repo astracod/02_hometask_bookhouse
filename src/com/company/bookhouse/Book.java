@@ -23,14 +23,15 @@ public class Book {
         System.out.printf(" | Автор : " + author + " | Жанр : " + genre + " | Название : " + title + " | Год выпуска : " + edition);
     }
 
-    public boolean getAythor(String author) {
+    public boolean trueAuthor(String author) {
         return this.author.equals(author) ;
     }
-    public boolean getGenre(String genre){
+    public boolean trueGenre(String genre){
         return this.genre.equals(genre);
     }
-    public boolean getEdition(int a, int b){
+    public boolean isPublisheInPeriod(int a, int b){
         if (this.edition > a & this.edition < b) return true ;
+
        return false;
     }
 }
