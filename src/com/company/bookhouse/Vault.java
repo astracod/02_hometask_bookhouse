@@ -25,8 +25,14 @@ public class Vault {
         library.addValue(book);
     }
 
+    public void showForma(String a) {
+        System.out.println("------------------------------------");
+        System.out.println(a);
+        System.out.println();
+    }
 
     public void showAll() {
+        showForma(" Список всей литературы : ");
         for (int i = 0; i < library.size(); i++) {
             library.get(i).aboutYourself();
             System.out.printf("\n");
@@ -34,9 +40,7 @@ public class Vault {
     }
 
     public void showAuthor(String author) {
-        System.out.println("------------------------------------");
-        System.out.println(" Все книги по автору : ");
-        System.out.println();
+        showForma(" Все книги по автору : ");
         MyVector<Book> authorArr = new MyVector<>();
         for (int i = 0; i < library.size(); i++) {
 
@@ -52,9 +56,7 @@ public class Vault {
     }
 
     public void showGenre(String genre) {
-        System.out.println("------------------------------------");
-        System.out.println(" Все книги по жанру : ");
-        System.out.println();
+        showForma(" Все книги по жанру : ");
         MyVector<Book> genreArr = new MyVector<>();
         for (int i = 0; i < library.size(); i++) {
             if (library.get(i).trueGenre(genre)) {
@@ -68,9 +70,7 @@ public class Vault {
     }
 
     public void showAuthorAndGenre(String author, String genre) {
-        System.out.println("------------------------------------");
-        System.out.println(" Все книги по автору и жанру : ");
-        System.out.println();
+        showForma(" Все книги по автору и жанру : ");
         MyVector<Book> authorGenreArr = new MyVector<>();
         for (int i = 0; i < library.size(); i++) {
             if (library.get(i).trueAuthor(author) & library.get(i).trueGenre(genre)) {
@@ -83,13 +83,11 @@ public class Vault {
         }
     }
 
-    public void period(int start, int end){
-        System.out.println("------------------------------------");
-        System.out.println(" Все книги за указынный период времени : ");
-        System.out.println();
+    public void period(int start, int end) {
+        showForma(" Все книги за указынный период времени : ");
         MyVector<Book> periodArr = new MyVector<>();
         for (int i = 0; i < library.size(); i++) {
-            if (library.get(i).isPublisheInPeriod(start, end)){
+            if (library.get(i).isPublisheInPeriod(start, end)) {
                 periodArr.addValue(library.get(i));
             }
         }
